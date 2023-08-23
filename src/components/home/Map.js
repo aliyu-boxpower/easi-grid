@@ -57,7 +57,7 @@ export default function Map({ site_gps }) {
 
     const mapView = document.getElementById("map-view");
     const map = new google.maps.Map(mapView,
-      { center: { lat: site_gps[0][0], lng: site_gps[0][1] }, zoom: 10 }
+      { center: { lat: site_gps[0][0], lng: site_gps[0][1] }, zoom: 2 }
     );
 
     var infowindow = new google.maps.InfoWindow();
