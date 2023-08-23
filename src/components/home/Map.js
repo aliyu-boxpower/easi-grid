@@ -65,7 +65,7 @@ export default function Map({ site_gps }) {
     var markers, i;
     
     for (i = 0; i < site_gps.length; i++) {  
-      console.log(i, "site_gps:", site_gps[i]);
+      // console.log(i, "site_gps:", site_gps[i]);
 
       const gps_lat = parseFloat(site_gps[i][0]); 
       const gps_lng = parseFloat(site_gps[i][1]);
@@ -84,10 +84,10 @@ export default function Map({ site_gps }) {
       //markers.setAnimation(google.maps.Animation.BOUNCE);
       markers.setPosition({ lat: gps_lat, lng: gps_lng });
       
-      google.maps.event.addListener(markers, 'click', (function(marker, i) {
+      google.maps.event.addListener(markers, 'click', (function(markers, i) {
         return function() {
           infowindow.setContent(gps_lat.toString());
-          infowindow.open(map, marker);
+          infowindow.open(map, markers);
         }
       })(markers, i));
     }
