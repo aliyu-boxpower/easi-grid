@@ -1,0 +1,149 @@
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("./assets/images/arrowdown.svg");
+    background-repeat: no-repeat;
+    background-position-x: 94%;
+    background-position-y: 9px;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+
+  }
+  .tabel-home{
+    box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.25);
+    background: #F8F8F8;
+  }
+
+  @media screen and (max-width: 1366px) {
+    .tabel-home th{
+      min-width: 193px;
+    }
+  }
+  /* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: #ED583B; 
+} */
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ED583B; 
+}
+
+.dlgbg{
+  /* position: fixed; */
+  position: absolute;
+        content:'';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 7;
+}
+select {
+  background-position-y: 13px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-image: url("./assets/images/datepicker.svg");
+position: absolute;
+left: 10px;
+top: 20px;
+}
+input[type=checkbox] {
+  accent-color: #ED583B;
+}
+.phone-input input{
+  outline: none;
+}
+.dilog-box{
+  position: fixed;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+.navbar-white{
+  position: fixed;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+
+
+input:checked {
+  background-color: #ED583B; /* bg-green-500 */
+}
+
+input:checked ~ span:last-child {
+  --tw-translate-x: 1.75rem; /* translate-x-7 */
+}
+/* .power-table th {
+  width: 28%;
+} */
+
+@media screen and (max-width: 768px) {
+  .power-table th {
+    /* width: 25%; */
+    min-width: 220px;
+}
+}
+.solar-crd:hover  {
+  color: white !important;
+  }
+.numbr{
+  color: #828282;
+}
+.solar-crd:hover  .numbr{
+color: white;
+}
+
+ .svg-2{
+  display: none;
+}
+.solar-crd:hover .svg-1{
+  display:none ;
+}
+.solar-crd:hover .svg-2{
+  display:block ;
+}
+
+.profilebrdr{
+  border: 1px solid rgba(163, 163, 163, 0.25);
+}
+.profilebrdr2{
+  border-bottom: 1px solid rgba(163, 163, 163, 0.25);
+}
+
+.loard-crd{
+  box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.04), 0px 4px 16px rgba(51, 51, 51, 0.08);
+border-radius: 8px;
+}
+.login-bg{
+  background-image: url("./assets/images/login-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+}
+.map-view {
+  border: 1px solid #aaa;
+  min-height: 300px;
+  /* height: calc(100% - 10px); */
+  margin: 10px 0px 0px 0px;
+  border-radius: 15px;
+}
