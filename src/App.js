@@ -66,6 +66,7 @@ function App() {
           <Route exact path="/dashboard" element={<DashboardHome />} />
 
           <Route  path="/project/create" element={<NewProjectForm/>} />
+          <Route  path="/project/edit/:id" element={<NewProjectForm/>} />
           <Route  path="/project/view/:id" element={<Projectview/>} />
           <Route  path="/site/create/:project_id" element={<NewSiteForm/>} />
           <Route  path="/scenarios/view/:site_id" element={<Scenarios/>} />

@@ -12,7 +12,7 @@ import PinInput from 'react-pin-input';
 
 import { setUserMiniProfile } from "../../redux/slices/userSlice";
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Login() {
   
@@ -37,6 +37,11 @@ export default function Login() {
 
   const cancelButtonRef = useRef(null);
   const pin = useRef();
+  const userInfo = useSelector((state) => state.user.profile);
+
+  if (userInfo?.id) {
+    navigate('/dashboard');
+  }
 
   React.useEffect(() => {
     // setAccountActivateModel(true)

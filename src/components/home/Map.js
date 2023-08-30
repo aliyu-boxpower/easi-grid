@@ -55,9 +55,17 @@ export default function Map({ site_gps }) {
 
     // var marker, i;
 
+    let default_gps_lat = 39.2216489; 
+    let default_gps_lng = -121.0130471;
+
+    if (site_gps && site_gps[0] && site_gps[0][0] && site_gps[0][1]) {
+      default_gps_lat = parseFloat(site_gps[0][0]); 
+      default_gps_lng = parseFloat(site_gps[0][1]);
+    }
+
     const mapView = document.getElementById("map-view");
     const map = new google.maps.Map(mapView,
-      { center: { lat: site_gps[0][0], lng: site_gps[0][1] }, zoom: 2 }
+      { center: { lat: default_gps_lat, lng: default_gps_lng }, zoom: 2 }
     );
 
     var infowindow = new google.maps.InfoWindow();

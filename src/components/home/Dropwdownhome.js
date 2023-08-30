@@ -11,11 +11,11 @@ export default function MyDropdown(props) {
                 </svg>
                 </Menu.Button>
                 <Menu.Items>
-                    <Link to={`/project/view/${props.id}`} >
-                        <div id="dropdown" className="z-10 px-3 absolute  right-[10px]  w-[143px] bg-white divide-y divide-gray-100 rounded-lg shadow ">
-                            <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                                <li className=' profilebrdr2'>
-                                    {/* inner ul started */}
+                    <div id="dropdown" className="z-10 px-3 absolute  right-[10px]  w-[143px] bg-white divide-y divide-gray-100 rounded-lg shadow ">
+                        <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                            <li className=' profilebrdr2'>
+                                {/* inner ul started */}
+                                <Link to={`/project/view/${props.id}`} >
                                     <ul className=' inline-flex ' >
                                         <li className=' mt-[4px]  ' >
                                             <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,10 +27,12 @@ export default function MyDropdown(props) {
                                             <h2 className=' text-lg text-black f-f-r   ' >View</h2>
                                         </li>
                                     </ul>
-                                    {/* inner ul ended */}
-                                </li>
-                                <li className=' profilebrdr2 mt-1' >
-                                    {/* inner ul started */}
+                                </Link>
+                                {/* inner ul ended */}
+                            </li>
+                            <li className=' profilebrdr2 mt-1' >
+                                {/* inner ul started */}
+                                <Link to={`/project/edit/${props.id}`} >
                                     <ul className=' inline-flex ' >
                                         <li  >
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,70 +45,67 @@ export default function MyDropdown(props) {
                                             <h2 className=' text-lg text-black f-f-r   ' >Edit</h2>
                                         </li>
                                     </ul>
-                                    {/* inner ul ended */}
-                                </li>
+                                </Link>
+                                {/* inner ul ended */}
+                            </li>
 
-                                <li className=' profilebrdr2 mt-1' >
-                                    {/* inner ul started */}
-                                    <ul className=' inline-flex ' >
-                                        <li  >
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M10.2 2.39999C10.0409 2.39999 9.88825 2.46321 9.77573 2.57573C9.66321 2.68825 9.59999 2.84086 9.59999 2.99999C9.59999 3.15912 9.66321 3.31174 9.77573 3.42426C9.88825 3.53678 10.0409 3.59999 10.2 3.59999H11.4V20.4H10.2C10.0409 20.4 9.88825 20.4632 9.77573 20.5757C9.66321 20.6883 9.59999 20.8409 9.59999 21C9.59999 21.1591 9.66321 21.3117 9.77573 21.4243C9.88825 21.5368 10.0409 21.6 10.2 21.6H13.8C13.9591 21.6 14.1117 21.5368 14.2243 21.4243C14.3368 21.3117 14.4 21.1591 14.4 21C14.4 20.8409 14.3368 20.6883 14.2243 20.5757C14.1117 20.4632 13.9591 20.4 13.8 20.4H12.6V3.59999H13.8C13.9591 3.59999 14.1117 3.53678 14.2243 3.42426C14.3368 3.31174 14.4 3.15912 14.4 2.99999C14.4 2.84086 14.3368 2.68825 14.2243 2.57573C14.1117 2.46321 13.9591 2.39999 13.8 2.39999H10.2ZM5.39999 4.79999H10.2V5.99999H5.39999C4.9226 5.99999 4.46477 6.18964 4.1272 6.5272C3.78964 6.86477 3.59999 7.3226 3.59999 7.79999V16.2C3.59999 16.6774 3.78964 17.1352 4.1272 17.4728C4.46477 17.8104 4.9226 18 5.39999 18H10.2V19.2H5.39999C4.60434 19.2 3.84128 18.8839 3.27867 18.3213C2.71606 17.7587 2.39999 16.9956 2.39999 16.2V7.79999C2.39999 7.00434 2.71606 6.24128 3.27867 5.67867C3.84128 5.11606 4.60434 4.79999 5.39999 4.79999ZM18.6 18H13.8V19.2H18.6C19.3956 19.2 20.1587 18.8839 20.7213 18.3213C21.2839 17.7587 21.6 16.9956 21.6 16.2V7.79999C21.6 7.00434 21.2839 6.24128 20.7213 5.67867C20.1587 5.11606 19.3956 4.79999 18.6 4.79999H13.8V5.99999H18.6C19.0774 5.99999 19.5352 6.18964 19.8728 6.5272C20.2104 6.86477 20.4 7.3226 20.4 7.79999V16.2C20.4 16.6774 20.2104 17.1352 19.8728 17.4728C19.5352 17.8104 19.0774 18 18.6 18Z" fill="black" />
-                                            </svg>
-
-
-                                        </li>
-                                        <li className=' ml-2 ' >
-                                            <h2 className=' text-lg text-black f-f-r   ' >Rename</h2>
-                                        </li>
-                                    </ul>
-                                    {/* inner ul ended */}
-                                </li>
-
-                                <li className=' profilebrdr2 mt-1' >
-                                    {/* inner ul started */}
-                                    <ul className=' inline-flex ' >
-                                        <li  >
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fillRule="evenodd" clipRule="evenodd" d="M21.1429 14.2857V5.14286C21.1429 4.53665 20.902 3.95527 20.4734 3.52662C20.0447 3.09796 19.4634 2.85715 18.8571 2.85715H9.71429C9.10808 2.85715 8.5267 3.09796 8.09804 3.52662C7.66939 3.95527 7.42857 4.53665 7.42857 5.14286V14.2857C7.42857 14.8919 7.66939 15.4733 8.09804 15.902C8.5267 16.3306 9.10808 16.5714 9.71429 16.5714H18.8571C19.4634 16.5714 20.0447 16.3306 20.4734 15.902C20.902 15.4733 21.1429 14.8919 21.1429 14.2857Z" stroke="black" strokeWidth="1.14286" strokeLinecap="round" strokeLinejoin="round" />
-                                                <path d="M7.42858 7.43199H5.14286C4.53665 7.43199 3.95527 7.67281 3.52662 8.10146C3.09796 8.53012 2.85715 9.1115 2.85715 9.71771V18.8571C2.85715 19.4633 3.09796 20.0447 3.52662 20.4734C3.95527 20.902 4.53665 21.1428 5.14286 21.1428H5.14629L14.2891 21.1268C14.8948 21.1259 15.4753 20.8847 15.9032 20.4562C16.3311 20.0276 16.5714 19.4468 16.5714 18.8411V16.5748M14.2857 6.28571V13.1428M17.7143 9.71428H10.8571" stroke="black" strokeWidth="1.14286" strokeLinecap="round" strokeLinejoin="round" />
-                                            </svg>
+                            <li className=' profilebrdr2 mt-1' >
+                                {/* inner ul started */}
+                                <ul className=' inline-flex ' >
+                                    <li  >
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.2 2.39999C10.0409 2.39999 9.88825 2.46321 9.77573 2.57573C9.66321 2.68825 9.59999 2.84086 9.59999 2.99999C9.59999 3.15912 9.66321 3.31174 9.77573 3.42426C9.88825 3.53678 10.0409 3.59999 10.2 3.59999H11.4V20.4H10.2C10.0409 20.4 9.88825 20.4632 9.77573 20.5757C9.66321 20.6883 9.59999 20.8409 9.59999 21C9.59999 21.1591 9.66321 21.3117 9.77573 21.4243C9.88825 21.5368 10.0409 21.6 10.2 21.6H13.8C13.9591 21.6 14.1117 21.5368 14.2243 21.4243C14.3368 21.3117 14.4 21.1591 14.4 21C14.4 20.8409 14.3368 20.6883 14.2243 20.5757C14.1117 20.4632 13.9591 20.4 13.8 20.4H12.6V3.59999H13.8C13.9591 3.59999 14.1117 3.53678 14.2243 3.42426C14.3368 3.31174 14.4 3.15912 14.4 2.99999C14.4 2.84086 14.3368 2.68825 14.2243 2.57573C14.1117 2.46321 13.9591 2.39999 13.8 2.39999H10.2ZM5.39999 4.79999H10.2V5.99999H5.39999C4.9226 5.99999 4.46477 6.18964 4.1272 6.5272C3.78964 6.86477 3.59999 7.3226 3.59999 7.79999V16.2C3.59999 16.6774 3.78964 17.1352 4.1272 17.4728C4.46477 17.8104 4.9226 18 5.39999 18H10.2V19.2H5.39999C4.60434 19.2 3.84128 18.8839 3.27867 18.3213C2.71606 17.7587 2.39999 16.9956 2.39999 16.2V7.79999C2.39999 7.00434 2.71606 6.24128 3.27867 5.67867C3.84128 5.11606 4.60434 4.79999 5.39999 4.79999ZM18.6 18H13.8V19.2H18.6C19.3956 19.2 20.1587 18.8839 20.7213 18.3213C21.2839 17.7587 21.6 16.9956 21.6 16.2V7.79999C21.6 7.00434 21.2839 6.24128 20.7213 5.67867C20.1587 5.11606 19.3956 4.79999 18.6 4.79999H13.8V5.99999H18.6C19.0774 5.99999 19.5352 6.18964 19.8728 6.5272C20.2104 6.86477 20.4 7.3226 20.4 7.79999V16.2C20.4 16.6774 20.2104 17.1352 19.8728 17.4728C19.5352 17.8104 19.0774 18 18.6 18Z" fill="black" />
+                                        </svg>
 
 
-                                        </li>
-                                        <li className=' ml-2 ' >
-                                            <h2 className=' text-lg text-black f-f-r   ' >Duplicate</h2>
-                                        </li>
-                                    </ul>
-                                    {/* inner ul ended */}
-                                </li>
+                                    </li>
+                                    <li className=' ml-2 ' >
+                                        <h2 className=' text-lg text-black f-f-r   ' >Rename</h2>
+                                    </li>
+                                </ul>
+                                {/* inner ul ended */}
+                            </li>
 
-                                <li className=' profilebrdr2 mt-1' >
-                                    {/* inner ul started */}
-                                    <ul className=' inline-flex ' >
-                                        <li  >
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM8 9H16V19H8V9ZM15.5 4L14.5 3H9.5L8.5 4H5V6H19V4H15.5Z" fill="black" />
-                                            </svg>
+                            <li className=' profilebrdr2 mt-1' >
+                                {/* inner ul started */}
+                                <ul className=' inline-flex ' >
+                                    <li  >
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fillRule="evenodd" clipRule="evenodd" d="M21.1429 14.2857V5.14286C21.1429 4.53665 20.902 3.95527 20.4734 3.52662C20.0447 3.09796 19.4634 2.85715 18.8571 2.85715H9.71429C9.10808 2.85715 8.5267 3.09796 8.09804 3.52662C7.66939 3.95527 7.42857 4.53665 7.42857 5.14286V14.2857C7.42857 14.8919 7.66939 15.4733 8.09804 15.902C8.5267 16.3306 9.10808 16.5714 9.71429 16.5714H18.8571C19.4634 16.5714 20.0447 16.3306 20.4734 15.902C20.902 15.4733 21.1429 14.8919 21.1429 14.2857Z" stroke="black" strokeWidth="1.14286" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M7.42858 7.43199H5.14286C4.53665 7.43199 3.95527 7.67281 3.52662 8.10146C3.09796 8.53012 2.85715 9.1115 2.85715 9.71771V18.8571C2.85715 19.4633 3.09796 20.0447 3.52662 20.4734C3.95527 20.902 4.53665 21.1428 5.14286 21.1428H5.14629L14.2891 21.1268C14.8948 21.1259 15.4753 20.8847 15.9032 20.4562C16.3311 20.0276 16.5714 19.4468 16.5714 18.8411V16.5748M14.2857 6.28571V13.1428M17.7143 9.71428H10.8571" stroke="black" strokeWidth="1.14286" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
 
 
-                                        </li>
-                                        <li className=' ml-2 ' >
-                                            <h2 className=' text-lg text-black f-f-r   ' >Delete</h2>
-                                        </li>
-                                    </ul>
-                                    {/* inner ul ended */}
-                                </li>
+                                    </li>
+                                    <li className=' ml-2 ' >
+                                        <h2 className=' text-lg text-black f-f-r   ' >Duplicate</h2>
+                                    </li>
+                                </ul>
+                                {/* inner ul ended */}
+                            </li>
 
-                            </ul>
+                            <li className=' profilebrdr2 mt-1' >
+                                {/* inner ul started */}
+                                <ul className=' inline-flex ' >
+                                    <li  >
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM8 9H16V19H8V9ZM15.5 4L14.5 3H9.5L8.5 4H5V6H19V4H15.5Z" fill="black" />
+                                        </svg>
 
-                        </div>
-                    </Link>
+
+                                    </li>
+                                    <li className=' ml-2 ' >
+                                        <h2 className=' text-lg text-black f-f-r   ' >Delete</h2>
+                                    </li>
+                                </ul>
+                                {/* inner ul ended */}
+                            </li>
+
+                        </ul>
+
+                    </div>
                 </Menu.Items>
-
             </Menu>
-
-
         </>
     )
 }

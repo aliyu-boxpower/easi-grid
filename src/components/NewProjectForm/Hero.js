@@ -2,12 +2,13 @@ import React from 'react'
 import Dilogbox from './Dilogbox';
 import Config from '../../utils/Config';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 export default function Hero() {
     const navigate = useNavigate();
     const user = useSelector((state) => state.user.profile);
+    const { id } = useParams();
 
     const [ projectName, setProjectName ] = React.useState('');
     const [ projectSummary, setProjectSummary ] = React.useState('');
@@ -33,6 +34,10 @@ export default function Hero() {
         { title: 'Permit Submission (Turnkey only)', key: 'permit_submission', checked: false },
         { title: 'Commissioning', key: 'commissioning', checked: false }
     ]);
+
+    React.useEffect(() => {
+        console.log("id:", id);
+    }, [id]);
 
     const _onChangeProjectServices = (e) => {
         const data = [ ...projectServices ];

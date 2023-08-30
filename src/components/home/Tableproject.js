@@ -84,6 +84,14 @@ export default function Tableproject(props) {
                                 <td className="px-6 py-3 relative">{ project.updated_at } <Dropwdownhome id={project.id} /></td>
                             </tr>
                         )) }
+                        <tr className="bg-white border-b  f-f-r text-base text-black-dark ">
+                            <td className="px-6 py-3">Darrell Williamson</td>
+                            <td className="px-6 py-3">Ohio Running Spring</td>
+                            <td className="px-6 py-3">Equipment Sale</td>
+                            <td className="px-6 py-3">2</td>
+                            <td className="px-6 py-3">03/03/12 22:43</td>
+                            <td className="px-6 py-3 relative "> 01/22/15 17:15 <Dropwdownhome /></td>
+                        </tr>
                         {/* <tr className="bg-white border-b  f-f-r text-base text-black-dark ">
                             <td className="px-6 py-3   ">
                                 Darrell Williamson
