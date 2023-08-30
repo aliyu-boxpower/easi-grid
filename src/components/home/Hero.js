@@ -12,6 +12,7 @@ export default function Hero() {
   const navigate = useNavigate();
   const [ projects, setProjects ] = useState([]);
   const [ site_gps, setSite_gps ] = useState([]);
+  const [ loadMap, setLoadMap ] = useState(false);
   const user = useSelector((state) => state.user.profile);
   useEffect(() => {
     // console.log("site_gps 2:", site_gps);
@@ -96,12 +97,15 @@ export default function Hero() {
         }
 
         setSite_gps(site_gps);
+        setLoadMap(true);
 
       } else {
         //swal("Oh no!", res.message, "error");
       }
     }).catch((error) => {
       console.log('Error: ', error);
+
+      setLoadMap(true);
       
       //swal("Oh no!", 'An error occured!!! while connecting to server. Please try again', "error");
     });
@@ -158,7 +162,7 @@ export default function Hero() {
       </div>
 
       {/* map section started */}
-      { site_gps.length ?
+      { loadMap ?
         <div className='my-4 '>
           <Map site_gps={site_gps} />
         </div>
