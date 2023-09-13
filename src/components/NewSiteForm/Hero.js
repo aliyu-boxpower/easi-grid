@@ -54,15 +54,15 @@ export default function Hero() {
   const [ preferredUnloadingMethod, setPreferredUnloadingMethod ] = React.useState('');
   const [ customerShippingMaxBudget, setCustomerShippingMaxBudget ] = React.useState('');
   const [ miscellaneousItemsBeingShipped, setMiscellaneousItemsBeingShipped ] = React.useState('');
-  const [ clickupSpaces, setClickupSpaces ] = React.useState('');
-  const [ PSAContact, setPSAContact ] = React.useState('');
-  const [ consultingContact, setConsultingContact ] = React.useState('');
-  const [ projectSharepoint, setProjectSharepoint ] = React.useState('');
-  const [ invoices, setInvoices ] = React.useState('');
-  const [ projectBOMWorksheet, setProjectBOMWorksheet ] = React.useState('');
-  const [ projectPricingWorksheet, setProjectPricingWorksheet ] = React.useState('');
-  const [ projectSchedule, setProjectSchedule ] = React.useState('');
-  const [ assumptionsAndExclusions, setAssumptionsAndExclusions ] = React.useState('');
+  const [ clickupSpaces, setClickupSpaces ] = React.useState('https://example.com');
+  const [ PSAContact, setPSAContact ] = React.useState('https://example.com');
+  const [ consultingContact, setConsultingContact ] = React.useState('https://example.com');
+  const [ projectSharepoint, setProjectSharepoint ] = React.useState('https://example.com');
+  const [ invoices, setInvoices ] = React.useState('https://example.com');
+  const [ projectBOMWorksheet, setProjectBOMWorksheet ] = React.useState('https://example.com');
+  const [ projectPricingWorksheet, setProjectPricingWorksheet ] = React.useState('https://example.com');
+  const [ projectSchedule, setProjectSchedule ] = React.useState('https://example.com');
+  const [ assumptionsAndExclusions, setAssumptionsAndExclusions ] = React.useState('https://example.com');
 
   const _onReceiveContact = (contacts) => {
     setSiteContacts(contacts);
@@ -121,16 +121,27 @@ export default function Hero() {
       "transformer_to_meter_type": transformerToMeterType,
       "transformer_to_meter_install": transformerToMeterInstall,
       "transformer_to_meter_distance": transformerToMeterDistanceFeet,
+      "additional_links": [
+        { "name": "Clickup Space", "value": "https://example.com" },
+        { "name": "PSA Contract", "value": "https://example.com" },
+        { "name": "Consulting Contract", "value": "https://example.com" },
+        { "name": "Project Sharepoint", "value": "https://example.com" },
+        { "name": "Invoices", "value": "https://example.com" },
+        { "name": "Project BOM Worksheet", "value": "https://example.com" },
+        { "name": "Project Pricing Worksheet", "value": "https://example.com" },
+        { "name": "Project Schedule", "value": "https://example.com" },
+        { "name": "Assumptions & Exclusions", "value": "https://example.com" },
+      ],
 
-      "clickup_space": clickupSpaces,
-      "psa_contract": PSAContact,
-      "consulting_contract": consultingContact,
-      "project_sharepoint": projectSharepoint,
-      "invoices": invoices,
-      "project_bom_worksheet": projectBOMWorksheet,
-      "project_pricing_worksheet": projectBOMWorksheet,
-      "project_schedule": projectSchedule,
-      "assumptions_and_exclusions": assumptionsAndExclusions
+      // "clickup_space": clickupSpaces,
+      // "psa_contract": PSAContact,
+      // "consulting_contract": consultingContact,
+      // "project_sharepoint": projectSharepoint,
+      // "invoices": invoices,
+      // "project_bom_worksheet": projectBOMWorksheet,
+      // "project_pricing_worksheet": projectBOMWorksheet,
+      // "project_schedule": projectSchedule,
+      // "assumptions_and_exclusions": assumptionsAndExclusions
     }
 
     // console.log("payload:", payload);

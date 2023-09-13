@@ -15,7 +15,7 @@ export default function MyDropdown(props) {
                         <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                             <li className=' profilebrdr2'>
                                 {/* inner ul started */}
-                                <Link to={`/project/view/${props.id}`} >
+                                <Link to={`/project/view/${props.project?.id}`} >
                                     <ul className=' inline-flex ' >
                                         <li className=' mt-[4px]  ' >
                                             <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +84,7 @@ export default function MyDropdown(props) {
                                 {/* inner ul ended */}
                             </li>
 
-                            <li className=' profilebrdr2 mt-1' >
+                            <li className=' profilebrdr2 mt-1' onClick={() => props.onDelete(props.project)} >
                                 {/* inner ul started */}
                                 <ul className=' inline-flex ' >
                                     <li  >

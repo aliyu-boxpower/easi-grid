@@ -34,7 +34,7 @@ export default function Hero() {
       }
       return res;
     }).then((res) => res.json()).then( async (res) => {
-      // console.log('res:', res);
+      console.log('res:', res);
 
       // if request is succesful, alert user that project has been cloned
       if (res.status) {

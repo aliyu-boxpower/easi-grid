@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 export default function Hero() {
     const navigate = useNavigate();
     const user = useSelector((state) => state.user.profile);
-    const { id } = useParams();
+    // const { id } = useParams();
 
     const [ projectName, setProjectName ] = React.useState('');
     const [ projectSummary, setProjectSummary ] = React.useState('');
@@ -35,9 +35,9 @@ export default function Hero() {
         { title: 'Commissioning', key: 'commissioning', checked: false }
     ]);
 
-    React.useEffect(() => {
-        console.log("id:", id);
-    }, [id]);
+    // React.useEffect(() => {
+    //     console.log("id:", id);
+    // }, [id]);
 
     const _onChangeProjectServices = (e) => {
         const data = [ ...projectServices ];
@@ -72,10 +72,10 @@ export default function Hero() {
             contract_value   : contactValue,
             contract_date    : contractDate,
             project_notes    : projectNotes,
-            project_services : project_services
+            project_services : project_services,
         }
 
-        // console.log("payload:", payload);
+        console.log("payload:", payload);
 
         // const token = localStorage.getItem('token');
         const url   = `${Config.API.URL}/projects`;

@@ -1,9 +1,61 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 import Dropwdownhome from './Dropwdownhome';
+import swal from 'sweetalert';
+import Config from '../../utils/Config';
 
 export default function Tableproject(props) {
+    const navigate = useNavigate();
+    const user = useSelector((state) => state.user.profile);
+    
+    const _onDelete = (project) => {
+        console.log("project:", project);
 
+        swal({
+            title: `Are you sure?`,
+            text: `You want to delete "${project.project_name}"? because once deleted, you will not be able to recover this project!`,
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+
+                fetch(`${Config.API.URL}/projects/${project.id}`, {
+                    method: 'DELETE',
+                    headers: { Accept: 'application/json', 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}` }
+                }).then((res) => {
+                    // if 401 error (unauthenticated user, then log user out)
+                    if ((res.status) === 401) {
+                      console.log("401 Error: Unauthenticated");
+                      localStorage.removeItem('user');
+                      navigate('/login');
+                    }
+                    return res;
+                }).then((res) => res.json()).then( async (res) => {
+                    console.log('res:', res);
+              
+                    // if request is succesful, alert user that project has been cloned
+                    if (res.status) {
+                      // setProjects(res.data.data);
+                      swal(`The "${project.project_name}" project has been successfully deleted!`, { icon: "success" });
+              
+                    } else {
+                      swal("Oh no!", res.message, "error");
+                    }
+                }).catch((error) => {
+                    console.log('Error: ', error);
+                    
+                    swal("Oh no!", 'An error occured!!! while connecting to server. Please try again', "error");
+                });
+
+                // swal("Poof! Your imaginary file has been deleted!", {
+                //     icon: "success",
+                // });
+            }
+        });
+    }
     return (
         <div className=' mt-7 ' >
             <ul className=' inline-flex ' >
@@ -81,7 +133,7 @@ export default function Tableproject(props) {
                                 <td className="px-6 py-3">{ project.project_type }</td>
                                 <td className="px-6 py-3">{ project.sites.length }</td>
                                 <td className="px-6 py-3">{ project.created_at }</td>
-                                <td className="px-6 py-3 relative">{ project.updated_at } <Dropwdownhome id={project.id} /></td>
+                                <td className="px-6 py-3 relative">{ project.updated_at } <Dropwdownhome onDelete={_onDelete} project={project} /></td>
                             </tr>
                         )) }
                         {/* <tr className="bg-white border-b  f-f-r text-base text-black-dark ">
@@ -92,100 +144,7 @@ export default function Tableproject(props) {
                             <td className="px-6 py-3">03/03/12 22:43</td>
                             <td className="px-6 py-3 relative "> 01/22/15 17:15 <Dropwdownhome /></td>
                         </tr> */}
-                        {/* <tr className="bg-white border-b  f-f-r text-base text-black-dark ">
-                            <td className="px-6 py-3   ">
-                                Darrell Williamson
-                            </td>
-                            <td className="px-6 py-3   ">
-                                Ohio Running Spring
-                            </td>
-                            <td className="px-6 py-3   ">
-                                Equipment Sale
-                            </td>
-                            <td className="px-6 py-3   ">
-                                2
-                            </td>
-                            <td className="px-6 py-3   ">
-                                03/03/12 22:43
-                            </td>
-                            <td className="px-6 py-3  relative ">
-                                01/22/15 17:15
-
-                                <Dropwdownhome />
-
-
-
-                            </td>
-                        </tr>
-                        <tr className="bg-white border-b  f-f-r text-base text-black-dark ">
-                            <td className="px-6 py-3   ">
-                                Darrell Williamson
-                            </td>
-                            <td className="px-6 py-3   ">
-                                Ohio Running Spring
-                            </td>
-                            <td className="px-6 py-3   ">
-                                Equipment Sale
-                            </td>
-                            <td className="px-6 py-3   ">
-                                2
-                            </td>
-                            <td className="px-6 py-3   ">
-                                03/03/12 22:43
-                            </td>
-                            <td className="px-6 py-3  relative ">
-                                01/22/15 17:15
-
-                                <Dropwdownhome />
-                            </td>
-                        </tr>
-                        <tr className="bg-white border-b  f-f-r text-base text-black-dark ">
-                            <td className="px-6 py-3   ">
-                                Darrell Williamson
-                            </td>
-                            <td className="px-6 py-3   ">
-                                Ohio Running Spring
-                            </td>
-                            <td className="px-6 py-3   ">
-                                Equipment Sale
-                            </td>
-                            <td className="px-6 py-3   ">
-                                2
-                            </td>
-                            <td className="px-6 py-3   ">
-                                03/03/12 22:43
-                            </td>
-                            <td className="px-6 py-3  relative ">
-                                01/22/15 17:15
-
-                                <Dropwdownhome />
-
-                            </td>
-                        </tr>
-                        <tr className="bg-white border-b  f-f-r text-base text-black-dark ">
-                            <td className="px-6 py-3   ">
-                                Darrell Williamson
-                            </td>
-                            <td className="px-6 py-3   ">
-                                Ohio Running Spring
-                            </td>
-                            <td className="px-6 py-3   ">
-                                Equipment Sale
-                            </td>
-                            <td className="px-6 py-3   ">
-                                2
-                            </td>
-                            <td className="px-6 py-3   ">
-                                03/03/12 22:43
-                            </td>
-                            <td className="px-6 py-3  relative ">
-                                01/22/15 17:15
-
-                                <Dropwdownhome />
-
-                            </td>
-                        </tr> */}
-
+                        
                     </tbody>
                 </table>
             </div>

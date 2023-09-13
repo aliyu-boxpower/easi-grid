@@ -65,12 +65,12 @@ function App() {
           {/* Dashboard pages rounting started */}
           <Route exact path="/dashboard" element={<DashboardHome />} />
 
-          <Route  path="/project/create" element={<NewProjectForm/>} />
-          <Route  path="/project/edit/:id" element={<NewProjectForm/>} />
-          <Route  path="/project/view/:id" element={<Projectview/>} />
-          <Route  path="/site/create/:project_id" element={<NewSiteForm/>} />
-          <Route  path="/scenarios/view/:site_id" element={<Scenarios/>} />
-          <Route  path="/scenarios/create/:site_id" element={<ScenariosForm/>} />
+          <Route path="/project/create" element={<NewProjectForm/>} />
+          <Route path="/project/view/:id" element={<Projectview/>} />
+          <Route path="/site/create/:project_id" element={<NewSiteForm/>} />
+          <Route path="/scenarios/view/:site_id" element={<Scenarios/>} />
+          <Route path="/scenarios/create/:site_id" element={<ScenariosForm/>} />
+          <Route path="/scenarios/optimization/:scenario_id" element={<Optimization />} />
 
           {/* <Route path="/projectview" element={<Projectview />} />
           <Route path="/newsiteform" element={<NewSiteForm />} />
@@ -78,7 +78,6 @@ function App() {
           <Route path="/scenarios" element={<Scenarios />} />
           <Route path="/scenariosform" element={<ScenariosForm />} />
            */}
-          <Route path="/optimization" element={<Optimization />} />
           <Route path="/library" element={<Library />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/contact/create" element={<ContactsForm />} />

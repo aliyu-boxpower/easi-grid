@@ -274,8 +274,7 @@ export default function TestingDilog(props) {
                                                 <h2 className=' f-f-r  xl:text-2xl text-xl  text-black-vlight mt-3 ' >Phone Number</h2>
                                             </div>
                                             <div className=" col-span-12 lg:col-span-9 mt-5 ">
-                                                {/* <input  className=' w-full  h-[56px] border border-grey bg-white-dark rounded-[4px] px-4 outline-none  ' />
-  */}
+                                                {/* <input  className=' w-full  h-[56px] border border-grey bg-white-dark rounded-[4px] px-4 outline-none  ' />*/}
                                                 
                                                 <input onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber} className=' w-full  h-[56px] border border-grey bg-white-dark rounded-[4px] px-4 outline-none  ' />
                                                 {/* <PhoneInput

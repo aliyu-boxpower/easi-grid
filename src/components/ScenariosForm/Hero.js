@@ -44,11 +44,11 @@ export default function Hero() {
       "generator_runtime": generatorRuntime,
       "fuel_consumption": fuelConsumption,
       "fuel_tank_size": fuelTankSize,
-      "solar_product": solarProducts[0],
-      "battery_product": batteryProducts[0],
-      "inverter_product": inverterProducts[0],
-      "container_product": containerProducts[0],
-      "generator_product": generatorProducts[0]
+      "solar_product": solarProducts,
+      "battery_product": batteryProducts,
+      "inverter_product": inverterProducts,
+      "container_product": containerProducts,
+      "generator_product": generatorProducts
     }
 
     console.log("payload:", payload);

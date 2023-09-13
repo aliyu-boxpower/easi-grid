@@ -29,7 +29,7 @@ export default function Projectsite(props) {
         <div className="grid grid-cols-12 mt-5 gap-4 xl:gap-2  ">
           {scenarios?.map((scenario, i) => (
             <div key={i} className="col-span-12 sm:col-span-6 xl:col-span-3">
-              <Link to="/optimization" >
+              <Link to={`/scenarios/optimization/${scenario.id}`} >
 
                 <div className=' w-[85%] ml-auto mr-auto xl:ml-0 xl:w-full bg-white rounded-[10px] shadow-lg p-[10px]' >
                   <ul className='inline-flex w-full' >
@@ -172,48 +172,39 @@ export default function Projectsite(props) {
       </div>
 
       <div className=' relative ' >
-
-
         <div className=' text-end ' >
+          <button  onClick={() => props.onDelete()} className=" mt-8 relative border bg-primary w-[186px] text-center h-[48px] rounded-[8px] f-f-r text-lg text-white  ">
+            Delete
+          </button>
+        </div>
+        
+        {/* <div className=' text-end ' >
           <button onClick={() => { setdrop(!drop) }} className=" mt-8 relative border bg-primary w-[186px] text-center h-[48px] rounded-[8px] f-f-r text-lg text-white  ">
             Action
 
           </button>
+        </div> */}
 
-
-
-
-        </div>
-
-        {drop ? <>
+        {/* {drop ? <>
 
           <div id="dropdown" className="z-10 px-3 absolute  right-[20%] top-[70%]   w-[143px] bg-white divide-y divide-gray-100 rounded-lg shadow ">
             <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
 
 
               <li className=' profilebrdr2 mt-1' >
-                {/* inner ul started */}
                 <ul className=' inline-flex ' >
                   <li  >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5 19H6.4L15.025 10.375L13.625 8.975L5 17.6V19ZM19.3 8.925L15.05 4.725L16.45 3.325C16.8333 2.94167 17.3043 2.75 17.863 2.75C18.4217 2.75 18.8923 2.94167 19.275 3.325L20.675 4.725C21.0583 5.10833 21.2583 5.571 21.275 6.113C21.2917 6.655 21.1083 7.11733 20.725 7.5L19.3 8.925ZM17.85 10.4L7.25 21H3V16.75L13.6 6.15L17.85 10.4ZM14.325 9.675L13.625 8.975L15.025 10.375L14.325 9.675Z" fill="black" />
                     </svg>
-
-
                   </li>
                   <li className=' ml-2 ' >
                     <h2 className=' text-lg text-black f-f-r   ' >Edit</h2>
                   </li>
                 </ul>
-                {/* inner ul ended */}
               </li>
 
-
-
-
-
               <li className=' profilebrdr2 mt-1' >
-                {/* inner ul started */}
                 <ul className=' inline-flex ' >
                   <li  >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -226,13 +217,12 @@ export default function Projectsite(props) {
                     <h2 className=' text-lg text-black f-f-r   ' >Delete</h2>
                   </li>
                 </ul>
-                {/* inner ul ended */}
               </li>
 
             </ul>
 
           </div>
-        </> : null}
+        </> : null} */}
 
 
       </div>
